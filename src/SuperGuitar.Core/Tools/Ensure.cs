@@ -12,6 +12,22 @@ namespace SuperGuitar.Core.Tools
             }
         }
 
+        internal static void MinLength(string anyString, int minLength)
+        {
+            if (anyString.Length < minLength)
+            {
+                throw new Exception($"{anyString} must have at least {minLength} lenghts");
+            }
+        }
+
+        internal static void IsInteger(string value, out int integer)
+        {
+            if(!int.TryParse(value, out integer))
+            {
+                throw new Exception($"Value {value} int not an integer");
+            }
+        }
+
         internal static void NotNull<T>(T value)
         {
             if (value == null)

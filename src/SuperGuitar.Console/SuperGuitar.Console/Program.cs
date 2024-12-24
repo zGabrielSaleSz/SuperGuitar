@@ -1,4 +1,5 @@
-﻿using SuperGuitar.Core.MusicTheory;
+﻿using SuperGuitar.Core.Draw;
+using SuperGuitar.Core.MusicTheory;
 
 namespace SuperGuitar
 {
@@ -6,12 +7,13 @@ namespace SuperGuitar
     {
         static void Main(string[] args)
         {
-            NotesStorage.GetInstance().Draw(Core.Enum.MusicalNotes.C);
+            NotesStorageDrawer.GetInstance().Draw(Core.Enum.MusicalNotes.C);
 
             var readresult = "1";
             while (readresult != "0")
             {
                 Console.WriteLine("1 - Quizz notes in portuguese");
+                Console.WriteLine("2 - Find out notes in fretboard");
                 Console.WriteLine("0 - Exit");
                 readresult = Console.ReadLine();
                 switch (readresult)
@@ -20,6 +22,9 @@ namespace SuperGuitar
                         break;
                     case "1":
                         _1QuizzNotes.Initialize();
+                        break;
+                    case "2":
+                        _2FretboardExplorer.Initialize();
                         break;
                     default:
                         Console.WriteLine("Unknown option");

@@ -40,41 +40,6 @@ namespace SuperGuitar.Core.MusicTheory
             return AllNotes[(int)note];
         }
 
-        public string[] Draw(MusicalNotes note)
-        {
-            int padding = 12;
-            int noteIndex = (int)note;
-            string[] result = new string[MAX_NOTES];
-            StringBuilder secondLevelRowCount = new StringBuilder('|');
-            StringBuilder firstLevelRowCount = new StringBuilder('|');
-            StringBuilder divisor = new StringBuilder('|');
-            StringBuilder notesRow = new StringBuilder('|');
-            for (int i = 0; i < MAX_NOTES; i++)
-            {
-                var indexFirstRow = i - noteIndex;
-                secondLevelRowCount.Append(Padding(MAX_NOTES + indexFirstRow, padding)).Append('|');
-                divisor.Append(Padding("", padding, '-')).Append('|');
-                firstLevelRowCount.Append(Padding(indexFirstRow, padding)).Append('|');
-                notesRow.Append(Padding(AllNotes[i].FormalName, padding)).Append('|');
-            }
-            Console.WriteLine(secondLevelRowCount.ToString());
-            Console.WriteLine(firstLevelRowCount.ToString());
-            Console.WriteLine(divisor.ToString());
-            Console.WriteLine(notesRow.ToString());
-            Console.WriteLine(divisor.ToString());
-            Console.WriteLine();
-            return result;
-        }
-
-        private string Padding(object content, int padding, char paddingChar = ' ')
-        {
-            // dumb logic, whatever
-            string res = content.ToString();
-            while(res.Length < padding)
-            {
-                res = paddingChar + res;
-            }
-            return res;
-        }
+        
     }
 }

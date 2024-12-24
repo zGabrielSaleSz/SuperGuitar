@@ -17,16 +17,15 @@ namespace SuperGuitar.Core.Notes.Notes
         public string FormalName => GetType().Name;
         public string PortugueseCleanName => TextTools.CleanupNoteName(PortugueseName);
 
-        
 
         public INote GetMajorThird()
         {
-            return NotesExplorer.AddSemiton((int)Note, 4);
+            return NotesExplorer.AddSemiton(Note, 4);
         }
 
         public INote GetFifth()
         {
-            return NotesExplorer.AddSemiton((int)Note, 7);
+            return NotesExplorer.AddSemiton(Note, 7);
         }
     }
 }

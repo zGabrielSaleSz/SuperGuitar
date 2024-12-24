@@ -1,4 +1,5 @@
 ﻿using SuperGuitar.Core.MusicTheory;
+using System;
 
 namespace SuperGuitar
 {

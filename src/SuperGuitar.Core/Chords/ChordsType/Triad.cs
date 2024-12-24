@@ -8,8 +8,8 @@ namespace SuperGuitar.Core.Chords.ChordsType
 
         public Triad(INote root) {
             _root = root;
-
         }
+
 
     }
 }
